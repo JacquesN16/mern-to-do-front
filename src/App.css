@@ -1,38 +1,246 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Georama:wght@200;300;400;500;600;700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/**
+ * ----------------------------------------
+ * animation scale-up-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes scale-up-bottom {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+}
+@keyframes scale-up-bottom {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+:root {
+  --font-Georama: "Georama",sans-serif;
+  --font-Raleway: "Raleway",sans-serif;
+  --font-Montserrat: "Montserrat",sans-serif;
+  --bkgrd_marine-tone01: #100e1d;
+  --bkgrd_grey-tone01: #e7e7eb;
+  --bkgrd_grey-tone02: #6e707a;
+  --font_grey-tone01: #e7e7eb;
+  --font_grey-tone02: #a09fb1;
+  --font_grey-tone03: #88869d;
+  --font_marine-tone01: #110e3c;
+}
+*{
+  margin: 0;
+  padding: 0;
+  background-color: var(--bkgrd_grey-tone01);
+}
+.main{
+  flex: 3;
+  background-color: var(--bkgrd_grey-tone01);
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+.header{
+  width: 50%;
+  height: 180px;
+  margin: 10px auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-Raleway);
+  padding-top: 30px;
+}
+
+.headerTitle{
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  color:var(--font_marine-tone01);
+  cursor: default;
+}
+
+.headerForm{
+  display: flex;
+}
+
+.headerInput{
+  border:none;
+  border-bottom: var(--bkgrd_grey-tone01) 1px solid;
+  transition: 0.4s;
+  margin-right: 10px;
+  width: 240px;
+  height: 50px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 15px;
+  color: var(--font_marine-tone01);
+  font-family: var(--font-Montserrat);
+
+}
+.headerInput:focus {
+  outline: none;
+}
+
+.headerInput:active,.headerInput:hover{
+  
+  border-bottom: var(--bkgrd_marine-tone01) 2px solid;
+  transition: 0.4s;
+}
+
+.headerButton{
+  border:none;
+  border-radius: 10px 0;
+  transition: 0.5s;
+  color:var(--font_grey-tone02);
+  background-color: var(--bkgrd_marine-tone01);
+  cursor: pointer;
+  padding: 0 12px;
+  -webkit-box-shadow: 2px 1px 3px 1px #6E6E6E; 
+  box-shadow: 2px 1px 3px 1px #6E6E6E;
+  font-size: 14px;
+}
+
+.headerButton:hover{
+  border-radius: 0 10px;
+  transition: 0.5s;
+  color:white;
+  font-size: 16px;
+}
+
+.headerButton i{
+  background-color: var(--bkgrd_marine-tone01);
+}
+
+
+.body{
+  width: 50%;
+  margin: 10px auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+.body .item{
+  width: 50%;
+  height: 60px;
+  border-radius: 15px;
+  box-shadow: 2px 1px 3px 1px #6E6E6E;
+  font-size: 14px;
+  margin-top: 18px;
+  
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.body .item:nth-child(odd){
+  background-color: white;
+}
+
+.body .item:nth-child(even){
+  background-color: var(--bkgrd_marine-tone01);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.itemTitle{
+  
+  color: var(--font_marine-tone01);
+  margin-left: 50px;
+  transition: 0.5s;
+  cursor: default;
+  padding-top: 10px;
+}
+.body .item:nth-child(odd) .itemTitle{
+  background-color: white;
+}
+.body .item:nth-child(even) .itemTitle{
+  background-color: var(--bkgrd_marine-tone01);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.itemButton{
+  border:none;
+  cursor: pointer;
+  display:none;
+  margin-right: 50px;
+  width: 60px;
+ 
+  
 }
+.body .item:nth-child(odd) .itemButton{
+  background-color: white;
+  
+}
+.body .item:nth-child(even) .itemButton{
+  background-color: var(--bkgrd_marine-tone01);
+  color: white;
+}
+
+.itemButton i{
+  object-fit: cover;
+  background-color: white;
+  color: var(--font_marine-tone01);
+  cursor: pointer;
+  transition: 0.4s;
+}
+.body .item:nth-child(odd) .itemButton i{
+  background-color: white;
+}
+.body .item:nth-child(even) .itemButton i{
+  background-color: var(--bkgrd_marine-tone01);
+  color:white;
+}
+
+.item:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+  border-bottom: var(--bkgrd_marine-tone01) 1px solid;
+}
+
+.item:hover .itemButton{
+  display: block;
+  transition: 0.5s;
+  -webkit-animation: scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.item:hover .itemButton i{
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+.item:hover .itemTitle{
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+
+
+
+

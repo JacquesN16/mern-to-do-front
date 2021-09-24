@@ -1,0 +1,86 @@
+.sideBar{
+    flex: 1;
+    position: relative;
+    height: 100vh;
+    background-color: var(--bkgrd_marine-tone01);
+    
+}
+.sideBarContainer{
+    width: 100%;
+    height: 100vh;
+    color: var(--font_grey-tone01);
+    background-color: var(--bkgrd_marine-tone01);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    font-family: var(--font-Raleway);
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    
+}
+
+
+.sideBarTop{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top:50px;
+    align-items: center;
+    background-color: var(--bkgrd_marine-tone01);
+}
+
+.sideBarCenter{
+    display: flex;
+    background-color: var(--bkgrd_marine-tone01);
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    height: 100%;
+}
+.sideBarImg{
+    width: 200px;
+    color: var(--font_grey-tone01);
+    background-color: var(--bkgrd_marine-tone01);
+}
+.sideBarTemperature{
+    color: var(--font_grey-tone01);
+    font-size: 80px;
+    font-weight: 400;
+    background-color: var(--bkgrd_marine-tone01);
+    
+}
+.sideBarTemperature span{
+    font-size: 50px;
+    color: var(--font_grey-tone02);
+    background-color: var(--bkgrd_marine-tone01);
+}
+.sideBarWeatherState{
+    color: var(--font_grey-tone02);
+    font-size: 40px;
+    text-align: center;
+    background-color: var(--bkgrd_marine-tone01);
+}
+
+.sideBarDate{
+    background-color: var(--bkgrd_marine-tone01);
+    color: var(--font_grey-tone03);
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+.sideBarCityTitle{
+    color: var(--font_grey-tone01);
+    background-color: var(--bkgrd_marine-tone01);
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 80px;
+
+}
+
