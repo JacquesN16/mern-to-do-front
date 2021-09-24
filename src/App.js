@@ -40,9 +40,7 @@ function App() {
         fetchTodos();
       }, []);
 
-      
       const todoClean = todos.filter(x => !!x);
-      console.log(todoClean);
       const items = todoClean.map((todo) => 
           <Item todo={todo} key={todo.id} fetchTodos={fetchTodos}/>);
     
@@ -73,15 +71,15 @@ function App() {
 
     };
 
-    const Item = (props) => {
-      const { desc, id } = props.todo;
+      const Item = (props) => {
+          const { desc, id } = props.todo;
 
-    const deleteTodo = async() => {
-          await fetch(`https://mern-to-do-list-jn.herokuapp.com/todos/${id}`, 
-          {method: 'DELETE'}).then(() => console.log(id));
+        const deleteTodo = async() => {
+              await fetch(`https://mern-to-do-list-jn.herokuapp.com/todos/${id}`, 
+              {method: 'DELETE'}).then(() => console.log('success'));
 
-        props.fetchTodos();
-    };
+            props.fetchTodos();
+      };
       
     return (
       <div className="item">
