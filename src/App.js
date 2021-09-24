@@ -11,7 +11,7 @@ function App() {
     const [text,setText] = useState([]);
     const todoRef = useRef();
     
-    const URI = 'https://mern-to-do-list-jn.herokuapp.com/todos'
+    const URI = 'https://mern-to-do-list-jn.herokuapp.com/todos';
     const fetchTodos = async () => {
       await fetch(URI)
                     .then(res => res.json())
@@ -77,7 +77,7 @@ function App() {
       const { desc, id } = props.todo;
 
     const deleteTodo = async() => {
-          await fetch(`${URI}/${id}`, 
+          await fetch(`https://mern-to-do-list-jn.herokuapp.com/todos/${id}`, 
           {method: 'DELETE'}).then(() => console.log(id));
 
         props.fetchTodos();
